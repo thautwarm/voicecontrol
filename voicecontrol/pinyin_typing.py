@@ -40,9 +40,7 @@ class 输入模式(DSModel, CommandsFromMethods):
     decider = staticmethod(just_hyp)
 
     def okay(self, st: StateMachine):
-        p = get_process("iFlyVoice.exe")
-        if p:
-            p.kill()
+        pressed(Key.f8)
         st.model = 控制模式()
 
 
@@ -57,7 +55,7 @@ class 控制模式(DSModel, CommandsFromMethods):
         i = st.state
         if i <= len(tb):
             for k in tb[i-1]:
-                keyboard.press(k)
+                pressed(k)
         st.state = 1
     
     def 五(self, st: StateMachine):
@@ -125,7 +123,7 @@ class 控制模式(DSModel, CommandsFromMethods):
 
     def 输入(self, st: StateMachine):
         st.model = 输入模式()
-        keyboard.press(Key.f8)
+        pressed(Key.f8)
 
 
 def main():
