@@ -50,8 +50,26 @@ class 控制模式(DSModel, CommandsFromMethods):
     path = os.path.join(os.path.dirname(__file__), "models", "control")
     decider = staticmethod(vote_most_common_word)
 
+    def 符(self, st: StateMachine):
+        tb = ('，', " 。","“”", "！","？","【】","「」","（）")
+        tb = ('，', " 。","“”", "！","？","【】","「」","（）")
+        
+        i = st.state
+        if i <= len(tb):
+            for k in tb[i-1]:
+                keyboard.press(k)
+    
     def 五(self, st: StateMachine):
         st.state += 5
+
+    def 四(self, st: StateMachine):
+        st.state += 4
+
+    def 三(self, st: StateMachine):
+        st.state += 3
+
+    def 二(self, st: StateMachine):
+        st.state += 2
 
     def 一(self, st: StateMachine):
         st.state += 1
