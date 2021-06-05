@@ -58,6 +58,7 @@ class 控制模式(DSModel, CommandsFromMethods):
         if i <= len(tb):
             for k in tb[i-1]:
                 keyboard.press(k)
+        st.state = 1
     
     def 五(self, st: StateMachine):
         st.state += 5
