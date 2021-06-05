@@ -98,9 +98,8 @@ class 控制模式(DSModel, CommandsFromMethods):
         with keyboard.pressed(Key.ctrl):
             pressed("e")
 
-    def 选(self, st: StateMachine):
-        with keyboard.pressed(Key.ctrl):
-            pressed(Key.space)
+    def 行(self, st: StateMachine):
+        pressed(Key.enter)
 
     def 休息(self, st: StateMachine):
         st.model = 休息模式()
